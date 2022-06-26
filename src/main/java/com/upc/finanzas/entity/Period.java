@@ -18,8 +18,8 @@ public class Period {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     @Column(length = 50, nullable = false)
-    private String periodName;
+    private String nombre;
     @Column(nullable = false)
-    private Integer numOfDays;
+    private Integer dias;
 
 }

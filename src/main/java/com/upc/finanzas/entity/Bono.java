@@ -20,45 +20,47 @@ public class Bono {
     @Column(nullable = true)
     private Long userId;
     @Column(length = 50, nullable = true)
-    private String Name;
+    private String Nombre;
     @Column(length = 10, nullable = true)
-    private Integer importance;
+    private Integer Importancia;
     @Column
     private Date createdAt;
     @Column(length = 20, nullable = true)
-    private BigDecimal vN;
+    private BigDecimal VN;
     @Column(length = 20, nullable = true)
-    private BigDecimal vC;
+    private BigDecimal VC;
     @Column(nullable = true)
-    private Integer numOfYears;
+    private Integer Anios;
     @Column(nullable = true)
-    private Integer couponPeriodId;
+    private Integer Periodo_Cupon_id;
     @Column(nullable = true)
-    private Integer gracePeriodId;
+    private Integer Plazo_Gracia;
     @Column(nullable = true)
-    private Integer dxA;
+    private Integer DXA;
     @Column(length = 15, nullable = true)
-    private String rateType;
+    private String Tipo_Tasa;
     @Column(length = 10, nullable = true)
-    private Integer capPeriod;
+    private Integer Periodo_Capitalizacion_id;
     @Column(length = 10, nullable = true)
-    private BigDecimal interestRate;
+    private BigDecimal P_Tasa_Interes;
     @Column(length = 10, nullable = true)
-    private BigDecimal annualDiscountRate;
+    private BigDecimal P_Tasa_Anual_Descuento;
     @Column(length = 10, nullable = true)
-    private BigDecimal iR;
+    private BigDecimal P_Impuesto;
     @Column(nullable = true)
-    private Date emissionDate;
+    private Date Emision;
     @Column(length = 10, nullable = true)
-    private BigDecimal primalPercentage;
+    private BigDecimal P_Prima;
     @Column(length = 10, nullable = true)
-    private BigDecimal structuringPercentage;
+    private BigDecimal P_Estructuracion;
     @Column(length = 10, nullable = true)
-    private BigDecimal collocationPercentage;
+    private BigDecimal P_Colocacion;
     @Column(length = 10, nullable = true)
-    private BigDecimal flotationPercentage;
+    private BigDecimal P_Flotacion;
     @Column(length = 10, nullable = true)
     private BigDecimal cavaliPercentage;
+    @Column(length = 10, nullable = true)
+    private String P_Cavali;
 
     @Valid
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })

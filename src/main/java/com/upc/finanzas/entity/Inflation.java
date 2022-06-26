@@ -15,7 +15,7 @@ public class Inflation {
     @Column(nullable = false, name = "bono_id")
     private Long bonoId;
     @Column(nullable = false, name = "inflation_year")
-    private Integer year;
-    @Column(length = 10, nullable = false)
-    private Float inflation;
+    private Integer Anio;
+    @Column(length = 10, nullable = false , name = "inflation")
+    private Float Inflacion;
 }
