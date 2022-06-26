@@ -22,10 +22,4 @@ public class Period {
     @Column(nullable = false)
     private Integer numOfDays;
 
-    @Valid
-    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "bono_id")
-    private List<Bono> bonos = new ArrayList<>();
-
 }

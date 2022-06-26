@@ -32,9 +32,9 @@ public class Bono {
     @Column(nullable = true)
     private Integer numOfYears;
     @Column(nullable = true)
-    private Integer couponPeriod;
+    private Integer couponPeriodId;
     @Column(nullable = true)
-    private Integer gracePeriod;
+    private Integer gracePeriodId;
     @Column(nullable = true)
     private Integer dxA;
     @Column(length = 15, nullable = true)
@@ -63,7 +63,6 @@ public class Bono {
     @Valid
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "bono_id")
-    private List<Inflation> inflations = new ArrayList<>();
-
+    @JoinColumn(name = "period_id")
+    private List<Period> periods = new ArrayList<>();
 }

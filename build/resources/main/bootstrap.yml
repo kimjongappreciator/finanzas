@@ -12,11 +12,11 @@ spring:
   # DB
   # ===============================
   datasource:
-    url: jdbc:h2:mem:productDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    platform: h2
-    username: sa
-    password:
+    url: jdbc:postgresql://ec2-3-224-8-189.compute-1.amazonaws.com:5432/ds4i80pduabnm
+    driverClassName: org.postgresql.Driver
+    platform: postgres
+    username: tfoognhybixuou
+    password: e83d79349b39541bf1342f4d2f56e7492c6942598f556f7a7e7df3f2b33aacc7
 
   # ===============================
   # JPA / HIBERNATE
@@ -31,3 +31,5 @@ spring:
         show_sql: true
         use_sql_comments: false
         format_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
