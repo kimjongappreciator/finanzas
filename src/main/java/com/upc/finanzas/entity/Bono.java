@@ -24,7 +24,7 @@ public class Bono {
     @Column(length = 10, nullable = true)
     private Integer Importancia;
     @Column
-    private Date createdAt;
+    private Date createdAt = new Date();
     @Column(length = 20, nullable = true)
     private BigDecimal VN;
     @Column(length = 20, nullable = true)
@@ -58,9 +58,9 @@ public class Bono {
     @Column(length = 10, nullable = true)
     private BigDecimal P_Flotacion;
     @Column(length = 10, nullable = true)
-    private BigDecimal cavaliPercentage;
-    @Column(length = 10, nullable = true)
-    private String P_Cavali;
+    private BigDecimal P_Cavali;
+    @Column
+    private String tipo_moneda;
 
     @Valid
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
