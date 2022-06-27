@@ -16,7 +16,7 @@ import javax.validation.Valid;
 public class userController {
     @Autowired
     private UserService userService;
-
+    @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> fetchById(@PathVariable("id") Long id) {
         try {
@@ -30,7 +30,7 @@ public class userController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<User> save(@Valid @RequestBody User bono , BindingResult result) {
 
@@ -41,7 +41,7 @@ public class userController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @PutMapping(value = "/{id}")
     public ResponseEntity<User> update(@PathVariable("id") Long id, @RequestBody User user) {
         try {
@@ -56,7 +56,7 @@ public class userController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<User> deleteById(@PathVariable("id") Long id){
 

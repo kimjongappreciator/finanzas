@@ -17,7 +17,7 @@ import java.util.List;
 public class bonoController {
     @Autowired
     private BonoService bonoService;
-
+    @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Bono> fetchById(@PathVariable("id") Long id) {
         try {
@@ -31,7 +31,7 @@ public class bonoController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<Bono> save(@Valid @RequestBody Bono bono , BindingResult result) {
 
@@ -42,7 +42,7 @@ public class bonoController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @PutMapping(value = "/{id}")
     public ResponseEntity<Bono> update(@PathVariable("id") Long id, @RequestBody Bono bono) {
         try {
@@ -57,7 +57,7 @@ public class bonoController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Bono> deleteById(@PathVariable("id") Long id){
 
@@ -74,7 +74,7 @@ public class bonoController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @GetMapping(path = "/userId/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Bono>> getByUserId(@PathVariable("userId") Long userId) throws Exception {
         List<Bono> bonos = bonoService.getByUserId(userId);

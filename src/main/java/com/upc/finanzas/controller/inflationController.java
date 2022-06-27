@@ -18,7 +18,7 @@ import java.util.Optional;
 public class inflationController {
     @Autowired
     private InflationService inflationService;
-
+    @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Inflation> fetchById(@PathVariable("id") Long id) {
         try {
@@ -32,7 +32,7 @@ public class inflationController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<Inflation> save(@Valid @RequestBody Inflation inflation, BindingResult result) {
 
@@ -43,7 +43,7 @@ public class inflationController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @PutMapping(value = "/{id}")
     public ResponseEntity<Inflation> update(@PathVariable("id") Long id, @RequestBody Inflation inflation) {
         try {
@@ -58,7 +58,7 @@ public class inflationController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
        }
-
+    @CrossOrigin
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Inflation> deleteById(@PathVariable("id") Long id){
 
@@ -75,6 +75,7 @@ public class inflationController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    @CrossOrigin
     @GetMapping(path = "/bonoId/{bonoId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Inflation>> getBybonoId(@PathVariable("bonoId") Long bonoId) throws Exception {
         List<Inflation> inflations = inflationService.getByBonoId(bonoId);

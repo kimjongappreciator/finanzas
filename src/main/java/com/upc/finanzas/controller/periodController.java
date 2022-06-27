@@ -16,7 +16,7 @@ import javax.validation.Valid;
 public class periodController {
     @Autowired
     private PeriodService periodService;
-
+    @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Period> fetchById(@PathVariable("id") Long id) {
         try {
@@ -30,7 +30,7 @@ public class periodController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<Period> save(@Valid @RequestBody Period period, BindingResult result) {
 
@@ -41,7 +41,7 @@ public class periodController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @PutMapping(value = "/{id}")
     public ResponseEntity<Period> update(@PathVariable("id") Long id, @RequestBody Period period) {
         try {
@@ -56,7 +56,7 @@ public class periodController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @CrossOrigin
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Period> deleteById(@PathVariable("id") Long id){
 
