@@ -19,6 +19,7 @@ public class bonoController {
     private BonoService bonoService;
 
 
+    @CrossOrigin
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Bono>> getAll() throws Exception {
         List<Bono> bonos = bonoService.findAll();
