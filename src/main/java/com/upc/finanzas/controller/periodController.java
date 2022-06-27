@@ -1,5 +1,6 @@
 package com.upc.finanzas.controller;
 
+import com.upc.finanzas.entity.Bono;
 import com.upc.finanzas.entity.Period;
 import com.upc.finanzas.service.PeriodService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +11,25 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/period")
 public class periodController {
     @Autowired
     private PeriodService periodService;
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Period>> getAll() throws Exception {
+        List<Period> periods = periodService.findAll();
+        if ( null == periods ) {
+            return  ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(periods);
+    }
+
+
     @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Period> fetchById(@PathVariable("id") Long id) {
