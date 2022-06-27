@@ -19,6 +19,7 @@ public class periodController {
     @Autowired
     private PeriodService periodService;
 
+    @CrossOrigin
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Period>> getAll() throws Exception {
         List<Period> periods = periodService.findAll();
