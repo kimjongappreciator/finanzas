@@ -17,6 +17,18 @@ import java.util.List;
 public class bonoController {
     @Autowired
     private BonoService bonoService;
+
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Bono>> getAll() throws Exception {
+        List<Bono> bonos = bonoService.findAll();
+        if ( null == bonos ) {
+            return  ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(bonos);
+    }
+
     @CrossOrigin
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Bono> fetchById(@PathVariable("id") Long id) {

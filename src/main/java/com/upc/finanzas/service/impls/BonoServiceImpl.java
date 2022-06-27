@@ -48,4 +48,6 @@ public class BonoServiceImpl implements BonoService {
     public List<Bono> getByUserId(Long aLong) throws Exception{
         return bonoRepository.getByUserId(aLong);
     }
+
+
 }
