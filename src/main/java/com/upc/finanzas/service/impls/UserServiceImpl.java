@@ -42,4 +42,10 @@ public class UserServiceImpl implements UserService {
     public void deleteById(Long aLong) throws Exception {
         userRepository.deleteById(aLong);
     }
+
+    @Transactional
+    @Override
+    public User getByEmail(String email){
+        return userRepository.getByEmail(email);
+    }
 }

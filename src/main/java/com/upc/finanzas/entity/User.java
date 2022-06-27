@@ -14,7 +14,7 @@ public class User {
     @Column(length = 50, nullable = false)
     private String Name;
     @Column(length = 50, nullable = false)
-    private String Email;
+    private String email;
     @Column(length = 50, nullable = false)
     private String Pwd;
 

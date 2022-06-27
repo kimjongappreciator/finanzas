@@ -73,4 +73,18 @@ public class userController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    @CrossOrigin
+    @GetMapping(path = "email/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> getByEmail(@PathVariable("email") String email) {
+        try {
+            User user = userService.getByEmail(email);
+            if(user != null){
+                return ResponseEntity.ok(user);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
